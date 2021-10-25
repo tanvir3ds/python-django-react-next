@@ -11,7 +11,10 @@ import {
   Grid,
 } from '@mui/material';
 import useStyle from '../../utills/style';
-
+import NextLink from 'next/link';
+import MenuIcon from '@mui/icons-material/Menu';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import PersonIcon from '@mui/icons-material/Person';
 function Layout({ children, props }) {
   const classes = useStyle();
 
@@ -22,9 +25,32 @@ function Layout({ children, props }) {
       </Head>
 
       <AppBar position="static" className={classes.navbar} position="fixed">
-        <Toolbar>
-          <Typography>Shop</Typography>
-        </Toolbar>
+        <div className="navbarmain">
+          <div className="menu-icons">
+            <IconButton color="inherit" aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+          </div>
+          <div>River Fish</div>
+
+          <div className="searchbox">
+            <i class="fas fa-search"></i>
+            <input type="search" placeholder="search your items" />
+          </div>
+          <div>
+            <NextLink href="/cart" passHref>
+              <Link>
+                <ShoppingCartIcon />
+              </Link>
+            </NextLink>
+
+            <NextLink href="/cart" passHref>
+              <Link>
+                <PersonIcon />
+              </Link>
+            </NextLink>
+          </div>
+        </div>
       </AppBar>
 
       <div className="main">

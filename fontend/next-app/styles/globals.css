@@ -18,3 +18,40 @@ a {
 .main {
   margin-top: 80px;
 }
+.navbarmain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* search box */
+.searchbox {
+  padding-left: 20px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.searchbox input {
+  background-color: rgb(241, 243, 244);
+  width: 80%;
+  height: 45px;
+  border: none;
+  outline: none;
+  color: rgb(44, 0, 0);
+  font-size: 15px;
+  padding: 0 40px;
+
+  border-radius: 5px 5px 5px 5px;
+}
+
+@media screen and (max-width: 768px) {
+  searchbox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  .searchbox input {
+    width: 100%;
+  }
+}
