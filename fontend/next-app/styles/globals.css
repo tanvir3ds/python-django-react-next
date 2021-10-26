@@ -14,15 +14,21 @@ a {
 * {
   box-sizing: border-box;
 }
-
+.navbar {
+  height: 40px;
+}
 .main {
-  margin-top: 80px;
+  margin-top: 40px;
+  margin-left: 200px;
 }
 .navbarmain {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* height: 40px; */
+  padding: 0px 5px 0px 5px;
 }
+
 /* search box */
 .searchbox {
   padding-left: 20px;
@@ -34,7 +40,7 @@ a {
 .searchbox input {
   background-color: rgb(241, 243, 244);
   width: 80%;
-  height: 45px;
+  height: 40px;
   border: none;
   outline: none;
   color: rgb(44, 0, 0);
@@ -44,8 +50,52 @@ a {
   border-radius: 5px 5px 5px 5px;
 }
 
+.sidebar {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  z-index: 1;
+  top: 30px;
+  left: 0;
+  margin-top: 20px;
+  /* background-color: rgb(0, 181, 226); */
+  background-color: rgb(39, 39, 39);
+}
+
+.back {
+  background-color: rgb(117, 117, 117);
+}
+
 @media screen and (max-width: 768px) {
-  searchbox {
+  .main {
+    margin-top: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .sidebar {
+    top: 30px;
+    height: 100%;
+    width: 40%;
+    background-color: rgb(238, 238, 238);
+    left: -100%;
+    z-index: 3;
+    transition: 0.3s;
+    /* background-color: rgb(39, 39, 39); */
+
+    /* z-index: var(--z-fixed); */
+
+    /* -webkit-transition: .5s;
+    transition: .3s; */
+
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
+    padding: 10px;
+  }
+
+  .show {
+    left: 0;
+  }
+  .searchbox {
     width: 100%;
     display: flex;
     align-items: center;

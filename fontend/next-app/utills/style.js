@@ -3,6 +3,12 @@ import { makeStyles } from '@mui/styles';
 const useStyle = makeStyles({
   navbar: {
     backgroundColor: '#8E44AD',
+    display: 'flex',
+    // alignItems: 'center',
+    justifyContent: 'center',
+    // justifyItems: 'space-between',
+    height: 50,
+
     '& a': {
       color: '#ffffff',
       marginLeft: 10,
@@ -14,11 +20,6 @@ const useStyle = makeStyles({
   },
   grow: {
     flexGrow: 1,
-  },
-
-  main: {
-    minHeight: '80vh',
-    marginLeft: '200px',
   },
 
   footer: {
