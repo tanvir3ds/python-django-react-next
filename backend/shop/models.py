@@ -74,3 +74,12 @@ class Order(models.Model):
         max_length=100, choices=ORDER_STATUS, default="Order Received")
     date = models.DateField(auto_now_add=True)
     payment_complit = models.BooleanField(default=False, blank=True, null=True)
+
+
+class SliderImage(models.Model):
+    title = models.CharField(max_length=200, blank=True,  null=True)
+    image = models.ImageField(upload_to="Slider/")
+    date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

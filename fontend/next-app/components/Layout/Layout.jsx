@@ -16,6 +16,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import { styled } from '@mui/system';
+import NavData from '../NavData';
 
 function Layout({ children, props }) {
   const classes = useStyle();
@@ -68,9 +69,7 @@ function Layout({ children, props }) {
       </AppBar>
 
       <div className={click ? 'sidebar show' : 'sidebar'}>
-        <ul>
-          <li>Small Fish</li>
-        </ul>
+        <NavData></NavData>
       </div>
 
       <div className="main">

@@ -2,10 +2,8 @@ from .views import *
 from django.urls import path, include
 from rest_framework import routers
 
-# import staic file from setting
-from django.conf import settings
-from django.conf.urls.static import static
 router = routers.DefaultRouter()
+router.register('category', CatagoryViewset, basename="CatagoryViewset")
 
 
 #import views
@@ -14,7 +12,8 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path("", include(router.urls)),
     path("product/", ProductView.as_view(), name="product"),
+    path("product/<int:id>", ProductView.as_view(), name="product"),
+    path("image-slider/", SliderImage.as_view(), name="product-image"),
+    path("product-category/", ProductCategory.as_view(), name="product-category"),
 
 ]
-urlpatterns = urlpatterns + \
-    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

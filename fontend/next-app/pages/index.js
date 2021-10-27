@@ -1,12 +1,12 @@
 import Layout from '../components/Layout/Layout';
 
+import SliderNext2 from '../components/SliderNext2';
+
 export default function Home() {
   return (
     <>
       <Layout>
-        <div className="back">
-          <h2>Product</h2>
-        </div>
+        <SliderNext2></SliderNext2>
       </Layout>
     </>
   );

@@ -19,7 +19,7 @@ a {
 }
 .main {
   margin-top: 40px;
-  margin-left: 200px;
+  margin-left: 220px;
 }
 .navbarmain {
   display: flex;
@@ -45,7 +45,7 @@ a {
   outline: none;
   color: rgb(44, 0, 0);
   font-size: 15px;
-  padding: 0 40px;
+  padding: 0 20px;
 
   border-radius: 5px 5px 5px 5px;
 }
@@ -58,12 +58,21 @@ a {
   top: 30px;
   left: 0;
   margin-top: 20px;
-  /* background-color: rgb(0, 181, 226); */
-  background-color: rgb(39, 39, 39);
+  background-color: rgb(248, 248, 248);
+  /* background-color: rgb(39, 39, 39); */
 }
 
 .back {
   background-color: rgb(117, 117, 117);
+}
+
+.categorylist {
+  list-style: none;
+  width: 100%;
+}
+.categoryitems {
+  padding: 2px 0px 2px 0px;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -96,6 +105,7 @@ a {
     left: 0;
   }
   .searchbox {
+    padding-left: 10px;
     width: 100%;
     display: flex;
     align-items: center;
