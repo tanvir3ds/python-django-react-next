@@ -24,6 +24,7 @@ function Layout({ children, props }) {
   const [click, setclick] = useState(false);
 
   const handleClick = () => setclick(!click);
+  const RemoveHandleClick = () => setclick(!true);
 
   return (
     <div>
@@ -44,7 +45,7 @@ function Layout({ children, props }) {
               className={classes.brand}
               display={{ xs: 'none', sm: 'block' }}
             >
-              River Fish
+              NEXT SHOP
             </Typography>
           </div>
 
@@ -68,11 +69,14 @@ function Layout({ children, props }) {
         </div>
       </AppBar>
 
-      <div className={click ? 'sidebar show' : 'sidebar'}>
+      <div
+        className={click ? 'sidebar show' : 'sidebar'}
+        onClick={RemoveHandleClick}
+      >
         <NavData></NavData>
       </div>
 
-      <div className="main">
+      <div className="main" onClick={RemoveHandleClick}>
         <div>{children}</div>
       </div>
 

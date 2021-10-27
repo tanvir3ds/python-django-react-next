@@ -2,6 +2,8 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout/Layout';
 import HttpRequestGet from '../../components/HttpRequestGet/HttpRequestGet';
+import { Grid } from '@mui/material';
+import ProductCard from '../../components/ProductCard';
 function CategoryProduct(props) {
   const router = useRouter();
   const { id } = router.query;
@@ -15,21 +17,22 @@ function CategoryProduct(props) {
   return (
     <Layout>
       <div>
-        <h2>{id}</h2>
-
         {data.map((item) => (
           <div>
+            <div className="category-image">
+              <img src={`${'http://127.0.0.1:8000'}${item.image}`} />
+            </div>
             {/* <h1>{item.title}</h1> */}
             {/* <h1>{item.category_product[1].title}</h1> */}
 
-            <div className="row">
+            <Grid container spacing={3} className="single-category">
               {item !== null &&
                 item?.category_product.map((product, i) => (
-                  <div className="col-md-3">
-                    <h2>{product.title}</h2>
-                  </div>
+                  <Grid item xs={6} md={3} key={product.title}>
+                    <ProductCard product={product}></ProductCard>
+                  </Grid>
                 ))}
-            </div>
+            </Grid>
           </div>
         ))}
       </div>

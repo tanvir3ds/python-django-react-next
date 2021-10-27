@@ -12,6 +12,11 @@ class Profile(models.Model):
 
 class Category(models.Model):
     title = models.CharField(max_length=199)
+    image = models.ImageField(
+        default="default/banner.png",
+        blank=True,
+        upload_to="category/")
+
     slug = models.CharField(max_length=200)
     date = models.DateField(auto_now_add=True)
 

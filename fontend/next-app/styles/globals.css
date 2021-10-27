@@ -75,6 +75,17 @@ a {
   width: 100%;
 }
 
+.single-category {
+  margin-top: 1px;
+}
+
+.category-image {
+  margin-top: 60px;
+}
+.category-image img {
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .main {
     margin-top: 50px;
@@ -88,7 +99,7 @@ a {
     background-color: rgb(238, 238, 238);
     left: -100%;
     z-index: 3;
-    transition: 0.3s;
+    /* transition: 0.7s; */
     /* background-color: rgb(39, 39, 39); */
 
     /* z-index: var(--z-fixed); */
@@ -103,6 +114,7 @@ a {
 
   .show {
     left: 0;
+    transition: 0.6s;
   }
   .searchbox {
     padding-left: 10px;
