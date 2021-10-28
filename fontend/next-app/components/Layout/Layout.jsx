@@ -41,12 +41,16 @@ function Layout({ children, props }) {
           </div>
 
           <div>
-            <Typography
-              className={classes.brand}
-              display={{ xs: 'none', sm: 'block' }}
-            >
-              NEXT SHOP
-            </Typography>
+            <NextLink href="/" passHref>
+              <Link>
+                <Typography
+                  className={classes.brand}
+                  display={{ xs: 'none', sm: 'block' }}
+                >
+                  NEXT SHOP
+                </Typography>
+              </Link>
+            </NextLink>
           </div>
 
           <div className="searchbox">
@@ -65,6 +69,9 @@ function Layout({ children, props }) {
                 <PersonIcon />
               </Link>
             </NextLink>
+          </div>
+          <div>
+            <Typography display={{ xs: 'none', sm: 'block' }}>Login</Typography>
           </div>
         </div>
       </AppBar>

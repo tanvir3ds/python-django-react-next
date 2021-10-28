@@ -29,3 +29,4 @@ class CatagorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = "__all__"
+        depth = 1

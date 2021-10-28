@@ -18,7 +18,7 @@ a {
   height: 40px;
 }
 .main {
-  margin-top: 40px;
+  margin-top: 60px;
   margin-left: 220px;
 }
 .navbarmain {
@@ -74,7 +74,14 @@ a {
   padding: 2px 0px 2px 0px;
   width: 100%;
 }
+.categoryitems a {
+  color: black;
+  text-decoration: none;
+}
 
+.categoryitems a:hover {
+  color: rgb(241, 0, 0);
+}
 .single-category {
   margin-top: 1px;
 }
@@ -86,9 +93,20 @@ a {
   width: 100%;
 }
 
+.single-product-image {
+  width: 100%;
+}
+
+.product-container {
+  padding: 0px 30px 10px 30px;
+}
+
+.single-card {
+  background-color: rgb(231, 231, 231);
+}
 @media screen and (max-width: 768px) {
   .main {
-    margin-top: 50px;
+    margin-top: 60px;
     margin-left: 0px;
     margin-right: 0px;
   }

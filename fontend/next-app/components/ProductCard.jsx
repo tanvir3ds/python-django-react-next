@@ -12,19 +12,23 @@ import {
 import NextLink from 'next/link';
 
 function ProductCard(props) {
-  const { title, price, image } = props.product;
+  const { title, price, image, id } = props.product;
   return (
     <div>
       <Card>
         <CardContent>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              // image={image}
-              image={`${'http://127.0.0.1:8000'}${image}`}
-              title={title}
-            ></CardMedia>
-          </CardActionArea>
+          <NextLink href={`/product/${id}/`} passHref>
+            <Link>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  // image={image}
+                  image={`${'http://127.0.0.1:8000'}${image}`}
+                  title={title}
+                ></CardMedia>
+              </CardActionArea>
+            </Link>
+          </NextLink>
 
           <h5>{title}</h5>
 
