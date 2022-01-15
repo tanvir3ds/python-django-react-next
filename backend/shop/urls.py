@@ -16,4 +16,6 @@ urlpatterns = [
     path("image-slider/", SliderImage.as_view(), name="product-image"),
     path("product-category/", ProductCategory.as_view(), name="product-category"),
 
+    path("profile/", ProfileView.as_view(), name="profile"),
+
 ]

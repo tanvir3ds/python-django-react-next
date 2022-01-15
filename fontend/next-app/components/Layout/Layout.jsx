@@ -17,6 +17,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import { styled } from '@mui/system';
 import NavData from '../NavData';
+import axios from 'axios';
 
 function Layout({ children, props }) {
   const classes = useStyle();
@@ -25,6 +26,33 @@ function Layout({ children, props }) {
 
   const handleClick = () => setclick(!click);
   const RemoveHandleClick = () => setclick(!true);
+
+  //Token
+  const [tokenget, settoken] = useState('');
+  const [isLoaded, setIsLoaded] = useState(true);
+  // useEffect(() => {
+  //   settoken(localStorage.getItem('token'));
+  // }, []);
+  // console.log(tokenget);
+
+  // useEffect(() => {
+  //   settoken(localStorage.getItem('token'));
+  //   if (tokenget !== null) {
+  //     const getdata = async () => {
+  //       await axios({
+  //         method: 'get',
+  //         url: `http://127.0.0.1:8000/api/profile/`,
+  //         headers: {
+  //           Authorization: `token ${tokenget}`,
+  //         },
+  //       }).then((response) => {
+  //         console.log(response, 'profile data');
+  //         setIsLoaded(false);
+  //       });
+  //     };
+  //     getdata();
+  //   }
+  // }, []);
 
   return (
     <div>
@@ -64,7 +92,7 @@ function Layout({ children, props }) {
               </Link>
             </NextLink>
 
-            <NextLink href="/cart" passHref>
+            <NextLink href="/login" passHref>
               <Link>
                 <PersonIcon />
               </Link>

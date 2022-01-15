@@ -55,3 +55,17 @@ class CatagoryViewset(viewsets.ViewSet):
         data_data['category_product'] = catagory_product_serilazer.data
         all_data.append(data_data)
         return Response(all_data)
+
+
+class ProfileView(views.APIView):
+    authentication_classes = [TokenAuthentication, ]
+    permission_classes = [IsAuthenticated, ]
+
+    def get(self, request):
+        try:
+            query = Profile.objects.get(prouser=request.user)
+            serializer = ProfileSerializers(query)
+            response_message = {"error": False, "data": serializer.data}
+        except:
+            response_message = {"error": True, "message": "data is no found"}
+        return Response(response_message)

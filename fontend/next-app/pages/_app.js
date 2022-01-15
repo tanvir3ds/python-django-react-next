@@ -1,5 +1,7 @@
 import '../styles/globals.css';
 import { useEffect } from 'react';
+import { Globalstate } from '../state/provider';
+import reducer, { initialstate } from '../state/reducer';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -9,7 +11,11 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <Globalstate initialstate={initialstate} reducer={reducer}>
+      <Component {...pageProps} />
+    </Globalstate>
+  );
 }
 
 export default MyApp;
